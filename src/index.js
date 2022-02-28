@@ -4,9 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { ThemeContextWrapper } from './theme/ThemeContextWrapper';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeContextWrapper>
+      <App />
+    </ThemeContextWrapper>
   </React.StrictMode>,
   document.getElementById('root')
 );
