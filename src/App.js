@@ -39,13 +39,10 @@ function App() {
     if (!isInput){
       config = await handleGen();
     }
-    console.log(config);
+    //console.log(config);
     const { data } = await axios.post(URL, config).catch((err) => console.log(err));
-    // if (data) {
-    //   setClues(data.clues);
-    // }
-    console.log(data)
-    // return data
+
+    //console.log(data)
     ansToArr(data)
   }
 
@@ -94,7 +91,7 @@ function App() {
       }
     }
 
-    console.log(rowArr);
+    //console.log(rowArr);
     setAnswerArr(rowArr);
     setShowAns(true);
   }
