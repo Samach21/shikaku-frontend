@@ -195,18 +195,18 @@ function App() {
       <div className="App-header">
         <div className="input-group mb-3">
           <span className={darkMode? "input-group-text-d": "input-group-text-l"}>Rows</span>
-          <input type="number" className={darkMode? "form-control-d":"form-control-l"} value={row} onChange={(e)=>setRow(e.target.value)}/>
+          <input type="number" className={darkMode? "form-control-d":"form-control-l"} value={row} onChange={(e)=>{setRow(e.target.value); setShowAns(false)}}/>
           <span className={darkMode? "input-group-text-d": "input-group-text-l"}>Columns</span>
-          <input type="number" className={darkMode? "form-control-d":"form-control-l"} value={column} onChange={(e)=>setColumn(e.target.value)}/>
+          <input type="number" className={darkMode? "form-control-d":"form-control-l"} value={column} onChange={(e)=>{setColumn(e.target.value); setShowAns(false)}}/>
         </div>
         {renderTable()}
         <div className="input-group-b mt-3">
-          <button className={darkMode? "input-group-text-d brNoRadius": "input-group-text-l brNoRadius"} disabled={isInput} onClick={()=>setIsInput(!isInput)}>Input</button>
-          <button className={darkMode? "input-group-text-d brNoRadius": "input-group-text-l brNoRadius"} disabled={!isInput} onClick={()=>setIsInput(!isInput)}>Generate</button>
+          <button className={darkMode? "input-group-text-d brNoRadius": "input-group-text-l brNoRadius"} disabled={isInput} onClick={()=>{setIsInput(!isInput); setShowAns(false)}}>Input</button>
+          <button className={darkMode? "input-group-text-d brNoRadius": "input-group-text-l brNoRadius"} disabled={!isInput} onClick={()=>{setIsInput(!isInput); setShowAns(false)}}>Generate</button>
         </div>
         <div className="input-group-b mt-3">
-          <button className={darkMode? "input-group-text-d brNoRadius": "input-group-text-l brNoRadius"} disabled={isDepth} onClick={()=>setIsDepth(!isDepth)}>Depth</button>
-          <button className={darkMode? "input-group-text-d brNoRadius": "input-group-text-l brNoRadius"} disabled={!isDepth} onClick={()=>setIsDepth(!isDepth)}>Breath</button>
+          <button className={darkMode? "input-group-text-d brNoRadius": "input-group-text-l brNoRadius"} disabled={isDepth} onClick={()=>{setIsDepth(!isDepth); setShowAns(false)}}>Depth</button>
+          <button className={darkMode? "input-group-text-d brNoRadius": "input-group-text-l brNoRadius"} disabled={!isDepth} onClick={()=>{setIsDepth(!isDepth); setShowAns(false)}}>Breath</button>
         </div>
         <div className='input-group-c mt-3'>
           <button className={darkMode? "input-group-text-d me-1": "input-group-text-l me-1"} onClick={()=>handleClear()}>Clear</button>
